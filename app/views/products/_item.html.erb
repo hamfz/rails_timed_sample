@@ -18,7 +18,7 @@
       <% end %>
     <% end %>
     <span>
-    <span><%= link_to "Visit site", product.website_url, class: 'link' %></span>
+    <span><%= link_to "Visit site", product.website_url, class: 'link', target: '_blank', rel: 'nofollow' %></span>
     <br />
     <span>Tags: <%= product.tag_list %>
   </div>
