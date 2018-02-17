@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :trackable, :validatable
 
-  validates :first_name, presence: true, format: { with: NO_SPECIAL_CHARS, message: 'does not allow certain special characters' }, on: :update
-  validates :last_name, presence: true, format: { with: NO_SPECIAL_CHARS, message: 'does not allow certain special characters' }, on: :update
+  validates :first_name, presence: true, allow_blank: false, format: { with: NO_SPECIAL_CHARS, message: 'does not allow certain special characters' }
+  validates :last_name, presence: true, allow_blank: false, format: { with: NO_SPECIAL_CHARS, message: 'does not allow certain special characters' }
 end

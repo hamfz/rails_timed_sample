@@ -6,8 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
-
-gem "paperclip", "~> 5.2.1"
+gem 'paperclip', '~> 5.2.1'
 
 #### Rails Defaults
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
