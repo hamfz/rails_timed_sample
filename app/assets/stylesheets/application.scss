@@ -85,6 +85,13 @@ input[type=text], input[type=file], input[type=email], input[type=password] {
     display: inline-block;
   }
 
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    display: block;
+  }
+
   .menu {
     padding: 19px;
 
@@ -101,15 +108,20 @@ input[type=text], input[type=file], input[type=email], input[type=password] {
 
   .user_info {
     padding: 24px;
-    font-size: 12px;
     float: right;
   }
 
   .button {
     text-transform: uppercase;
     border: 1px solid #e8e8e8;
-    padding: 7px;
+    padding: 6px;
     border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
   }
   .colored {
     color: #ffffff;
@@ -215,7 +227,7 @@ input[type=text], input[type=file], input[type=email], input[type=password] {
 .product_item {
   border: 1px solid $BORDER_COLOR;
   padding: 15px;
-  width: 100%;
+  width: 95%;
   margin-bottom: 7px;
 
   .header_link {

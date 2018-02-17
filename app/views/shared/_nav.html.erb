@@ -1,21 +1,23 @@
 <div id="nav">
-  <div class="menu">
-    <ul>
-      <li><%= render 'shared/search' %></li>
-      <li><%= link_to "All Products", root_path() %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to "My Subscriptions", mine_home_index_path() %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="user_info">
-    <ul>
-    <% if user_signed_in? %>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button' %></li>
-    <% else %>
-      <li><%= link_to "Log in", new_session_path(:user), class: 'button' %></li>
-      <li><%= link_to "Sign up", new_registration_path(:user), class: 'button colored' %></li>
-    <% end %>
-    </ul>
+  <div class="container">
+    <div class="menu">
+      <ul>
+        <li><%= render 'shared/search' %></li>
+        <li><%= link_to "All Products", root_path() %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "My Subscriptions", mine_home_index_path() %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="user_info">
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button' %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_session_path(:user), class: 'button' %></li>
+          <li><%= link_to "Sign up", new_registration_path(:user), class: 'button colored' %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
