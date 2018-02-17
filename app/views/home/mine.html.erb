@@ -1,0 +1,14 @@
+<div class="row">
+  <div id="tag_feed" class="col">
+    <h2>Tags</h2>
+    <%= render 'tags/index', tags: @tags %>
+  </div>
+
+  <div id="item_feed" class="col">
+    <h2>My Product Subscriptions</h2>
+    <% if @products.empty? %>
+      <span>No subscriptions.</span>
+    <% end %>
+    <%= render 'products/index', products: @products %>
+  </div>
+</div>

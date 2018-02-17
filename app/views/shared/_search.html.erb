@@ -1,0 +1,4 @@
+<%= form_tag '', method: :get, enforce_utf8: false do %>
+  <%= text_field_tag 'search', params[:search], placeholder: 'Search for product...' %>
+  <%= submit_tag 'Search', class: 'button colored', name: nil %>
+<% end %>

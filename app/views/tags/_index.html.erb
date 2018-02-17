@@ -1,0 +1,6 @@
+<ul>
+  <li><%= link_to 'all' %></li>
+  <% tags.each do |tag| %>
+    <%= render 'tags/item', tag: tag %>
+<% end %>
+</ul>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Test product
+  description: this is a new test product
+  website_url: http://www.google.com
+
+two:
+  title: alternate Product
+  description: this is an alternate product
+  website_url: http://www.test.com

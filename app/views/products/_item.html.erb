@@ -1,0 +1,25 @@
+<div class="row product_item">
+  <div class="col image">
+    <% if product.picture.exists? %>
+      <img src="<%= product.picture.url(:thumb) %>"/>
+    <% end %>
+  </div>
+  <div class="col details">
+    <%= link_to product.title, product_path(product), class: 'header_link' %>
+    <p>
+      <%= product.description %>
+    </p>
+    <span><%= product.subscriber_count %> subscribers</span>
+    <% if user_signed_in? %>
+      <% if product.subscribers.where(id: current_user.id).empty? %>
+        <span><%= link_to '(subscribe)', subscribe_product_path(product), method: :put %></span>
+      <% else %>
+        <span><%= link_to '(unsubscribe)', unsubscribe_product_path(product), method: :delete %></span>
+      <% end %>
+    <% end %>
+    <span>
+    <span><%= link_to "Visit site", product.website_url, class: 'link' %></span>
+    <br />
+    <span>Tags: <%= product.tag_list %>
+  </div>
+</div>

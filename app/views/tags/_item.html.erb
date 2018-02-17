@@ -1,0 +1,3 @@
+<li>
+  <%= link_to tag.description, params.permit(:tag).merge(tag: tag.description, search: params[:search]) %>
+</li>

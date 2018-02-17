@@ -1,0 +1,46 @@
+<%= form_with model: product, local: true, html: { multipart: true } do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :product_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website_url %>
+    <%= form.text_field :website_url, id: :product_website_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <% if @product.picture.exists? %>
+      <img src="<%= product.picture.url(:thumb) %>"/>
+      <br/>
+    <% end %>
+    <%= form.file_field :picture, id: :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tag_list %>
+    <%= form.text_field :tag_list, id: :tag_list, placeholder: "Comma seperated list of tags..." %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
